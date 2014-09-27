@@ -10,7 +10,7 @@ package polynomial;
  * @author matychp
  * @param <X>
  */
-public class Term<X extends Comparable> {
+public class Term<X extends Comparable> implements Comparable{
 
     private int exponente;
     private X coeficiente;
@@ -18,7 +18,7 @@ public class Term<X extends Comparable> {
     public Term() {
     }
     
-    public Term(int unExponente, X unCoeficiente){
+    public Term(X unCoeficiente, int unExponente){
         this.exponente = unExponente;
         this.coeficiente = unCoeficiente;
     }
@@ -42,5 +42,10 @@ public class Term<X extends Comparable> {
     @Override
     public String toString() {
         return super.toString(); //To change body of generated methods, choose Tools | Templates.
-    }    
+    }
+
+    @Override
+    public int compareTo(Object t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

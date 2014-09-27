@@ -12,17 +12,29 @@ package polynomial;
  */
 public class Polinomio <X extends Comparable>{
     
-    private DoubleList<X> polinomio;
+    private DoubleList <Term> polinomio;
     
     public Polinomio(){
         polinomio = new DoubleList<>();
+        Term<X> unTerm = new Term(0,0);
+        polinomio.addFirst(unTerm);
+    }
+    
+    public Polinomio(int grado){
+        polinomio = new DoubleList<>();
+        
+        int coeficiente = grado;
+        for(int exponente = 0; exponente <= grado ; exponente++,coeficiente--){
+            Term<X> nTerm = new Term(coeficiente, exponente);
+            polinomio.addLast(nTerm);
+        }
     }
 
-    public DoubleList<X> getPolinomio() {
+    public DoubleList<Term> getPolinomio() {
         return polinomio;
     }
 
-    public void setPolinomio(DoubleList<X> polinomio) {
+    public void setPolinomio(DoubleList<Term> polinomio) {
         this.polinomio = polinomio;
     }
 
