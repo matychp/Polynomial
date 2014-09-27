@@ -9,10 +9,6 @@ package polynomial;
  *
  * @author matychp
  */
-public class Principal {
-
-    public static void main(String[] args) {
-        
-    }
+public class Term {
     
 }
