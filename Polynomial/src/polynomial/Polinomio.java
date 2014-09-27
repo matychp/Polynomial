@@ -8,7 +8,26 @@ package polynomial;
 /**
  *
  * @author matychp
+ * @param <X>
  */
-public class Polinomio {
+public class Polinomio <X extends Comparable>{
     
+    private DoubleList<X> polinomio;
+    
+    public Polinomio(){
+        polinomio = new DoubleList<>();
+    }
+
+    public DoubleList<X> getPolinomio() {
+        return polinomio;
+    }
+
+    public void setPolinomio(DoubleList<X> polinomio) {
+        this.polinomio = polinomio;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
 }
