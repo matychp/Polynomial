@@ -41,7 +41,7 @@ public class Term<X extends Comparable> implements Comparable{
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return this.coeficiente + "x^" + this.exponente;
     }
 
     @Override
