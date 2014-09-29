@@ -5,6 +5,8 @@
  */
 package polynomial;
 
+import java.util.Scanner;
+
 /**
  *
  * @author matychp
@@ -12,15 +14,26 @@ package polynomial;
 public class Test {
 
     public static void main(String[] args) {
-        Polinomio unPolinomioVacio = new Polinomio();
+        Scanner in = new Scanner(System.in);
+        
+        Polynomial unPolinomioVacio = new Polynomial();
         System.out.println(unPolinomioVacio);
         
-        Polinomio unPolinomio = new Polinomio(5);
-        
-        System.out.println(unPolinomio.toString());
+        System.out.println("Ingrese un numero por teclado: ");
+        int n = in.nextInt();
+        Polynomial unPolinomioNPorTeclado = new Polynomial(n);        
+        System.out.println(unPolinomioNPorTeclado.toString());
         
         Integer unArreglo[] = {9,8,7,6,0,4,3,2,1};
-        Polinomio unPolinomioPorArreglo = new Polinomio(unArreglo);
+        Polynomial unPolinomioPorArreglo = new Polynomial(unArreglo);
         System.out.println(unPolinomioPorArreglo);
+        
+        System.out.println("Ingrese un numero a sumar: ");
+        int numA = in.nextInt();
+        Polynomial pA = new Polynomial(numA);
+        System.out.println("Ingrese un numero a sumar: ");
+        int numB = in.nextInt();
+        Polynomial pB = new Polynomial(numB);
+        System.out.println("Suma: " + pA.suma(pB).toString());
     }
 }
