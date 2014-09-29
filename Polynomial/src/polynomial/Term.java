@@ -4,15 +4,15 @@ package polynomial;
  *
  * @author matychp
  */
-public class Term implements Comparable{
+public class Term implements Comparable {
 
     private int exponente;
     private int coeficiente;
 
     public Term() {
     }
-    
-    public Term(int unCoeficiente, int unExponente){
+
+    public Term(int unCoeficiente, int unExponente) {
         this.exponente = unExponente;
         this.coeficiente = unCoeficiente;
     }
@@ -32,9 +32,14 @@ public class Term implements Comparable{
     public void setExponente(int exponente) {
         this.exponente = exponente;
     }
-    
-    public Term suma(Term t){
-        return new Term(this.coeficiente + t.getCoeficiente(), this.exponente);
+
+    public Term suma(Term t) {
+        if (this.exponente == t.getExponente()) {
+            return new Term(this.coeficiente + t.getCoeficiente(), this.exponente);
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
