@@ -1,29 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package polynomial;
 
 /**
  *
  * @author matychp
- * @param <X>
  */
-public class Term<X extends Comparable> implements Comparable{
+public class Term implements Comparable{
 
     private int exponente;
-    private X coeficiente;
+    private int coeficiente;
 
     public Term() {
     }
     
-    public Term(X unCoeficiente, int unExponente){
+    public Term(int unCoeficiente, int unExponente){
         this.exponente = unExponente;
         this.coeficiente = unCoeficiente;
     }
 
-    public X getCoeficiente() {
+    public int getCoeficiente() {
         return this.coeficiente;
     }
 
@@ -31,12 +25,16 @@ public class Term<X extends Comparable> implements Comparable{
         return this.exponente;
     }
 
-    public void setCoeficiente(X coeficiente) {
+    public void setCoeficiente(int coeficiente) {
         this.coeficiente = coeficiente;
     }
 
     public void setExponente(int exponente) {
         this.exponente = exponente;
+    }
+    
+    public Term suma(Term t){
+        return new Term(this.coeficiente + t.getCoeficiente(), this.exponente);
     }
 
     @Override
