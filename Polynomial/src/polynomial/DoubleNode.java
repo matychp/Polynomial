@@ -1,27 +1,27 @@
 package polynomial;
 
-public class Node < E extends Comparable >
+public class DoubleNode < E extends Comparable >
 {
    private E info;
-   private Node <E> next, previous;
+   private DoubleNode <E> next, previous;
    
-   public Node ( )
+   public DoubleNode ( )
    {
    }
    
-   public Node (E e, Node <E> n, Node <E> p)
+   public DoubleNode (E e, DoubleNode <E> n, DoubleNode <E> p)
    {
      info = e;
      next = n;
      previous = p;
    }
    
-   public Node <E> getNext()
+   public DoubleNode <E> getNext()
    {
      return next;
    }
    
-   public void setNext(Node <E> n)
+   public void setNext(DoubleNode <E> n)
    {
      next = n;
    }
@@ -36,12 +36,12 @@ public class Node < E extends Comparable >
      info = p;
    }
    
-   public Node <E> getPrevious()
+   public DoubleNode <E> getPrevious()
    {
        return previous;
    }
 
-   public void setPrevious(Node <E> p)
+   public void setPrevious(DoubleNode <E> p)
    {
        previous = p;
    }
