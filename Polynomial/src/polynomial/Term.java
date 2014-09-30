@@ -49,6 +49,18 @@ public class Term implements Comparable {
 
     @Override
     public int compareTo(Object t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Term aux = (Term)t;
+        if(this.exponente == aux.getExponente()){
+            return this.coeficiente - aux.getCoeficiente();
+        }
+        else{
+            return this.exponente - aux.getExponente();
+        }
+    }
+
+    @Override
+    public boolean equals(Object t) {
+        Term aux = (Term)t;
+        return this.exponente == aux.getExponente() && this.coeficiente == aux.getCoeficiente();
     }
 }
