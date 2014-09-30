@@ -16,24 +16,37 @@ public class Test {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
+        //Ingreso de un polinomio sin parametros.
         Polynomial unPolinomioVacio = new Polynomial();
         System.out.println(unPolinomioVacio);
         
-        System.out.println("Ingrese un numero por teclado: ");
+        //Ingreso de un polinomio por teclado. Constructor que toma un String.
+        System.out.print("Ingrese un numero por teclado: ");
         int n = in.nextInt();
         Polynomial unPolinomioNPorTeclado = new Polynomial(n);        
         System.out.println(unPolinomioNPorTeclado.toString());
         
+        //Ingreso de un polinomio por teclado. Constructor que toma un arreglo unidimensional.
         Integer unArreglo[] = {9,8,7,6,0,4,3,2,1};
         Polynomial unPolinomioPorArreglo = new Polynomial(unArreglo);
         System.out.println(unPolinomioPorArreglo);
-        
-        System.out.println("Ingrese un numero a sumar: ");
-        int numA = in.nextInt();
-        Polynomial pA = new Polynomial(numA);
-        System.out.println("Ingrese un numero a sumar: ");
-        int numB = in.nextInt();
-        Polynomial pB = new Polynomial(numB);
-        System.out.println("Suma: " + pA.suma(pB).toString());
+       
+        //Ingreso de dos polinomios por teclado a sumarse.
+        System.out.print("Ingrese un numero a sumar: ");
+        int sumA = in.nextInt();
+        Polynomial psumA = new Polynomial(sumA);
+        System.out.print("Ingrese un numero a sumar: ");
+        int sumB = in.nextInt();
+        Polynomial psumB = new Polynomial(sumB);
+        System.out.println("Suma: " + psumA.suma(psumB).toString());
+                
+        //Ingreso de dos polinomios por teclado a determinar si son o no iguales. 
+        System.out.print("Ingrese un numero a comparar: ");
+        int compA = in.nextInt();
+        Polynomial pcompA = new Polynomial(compA);
+        System.out.print("Ingrese un numero a comparar: ");
+        int compB = in.nextInt();
+        Polynomial pcompB = new Polynomial(compB);
+        System.out.println("Son iguales?: " + pcompA.equals(pcompB));
     }
 }
