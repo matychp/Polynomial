@@ -106,12 +106,36 @@ public class Polynomial {
     public Iterator descendingIterator(){
         return this.polinomio.descendingIterator();
     }
+    
+    /**
+     * Compara si dos polinomios (this y uno por parametro), son iguales.
+     * Es decir, tienen la misma cantidad de terminos, y cada uno de ellos 
+     * es de igual grado y coeficiente respecto al otro polinomio.
+     * Se puede usar tanto el metodo compareTo() como equals() para determinar si dos terminos son iguales.
+     * @param pol un polinomio a comparar si es igual a this.
+     * @return true: si los polinomios son iguales, false: si son distintos.
+     */
+    public boolean equals(Polynomial pol){        
+        if(this.size() != pol.size()){
+            return false;
+        }
+        
+        Iterator<Term> itThis = this.iterator();
+        Iterator<Term> itPol = pol.iterator();        
+        while(itThis.hasNext() || itPol.hasNext()){
+            //if(itThis.next().compareTo(itPol.next()) != 0){
+            if(!itThis.next().equals(itPol.next())){
+                return false;
+            }
+        }        
+        return true;
+    }
 
     @Override
     public String toString() {
         String r = "";
         for (Term unTermino : this.polinomio) {
-            r += "\t+\t" + unTermino.toString();
+            r += unTermino.toString() + "\t";
         }
         return r;
     }
